@@ -5,33 +5,36 @@ name: Build and Deploy Jekyll Site
 on:
   push:
     branches:
-      - master # Trigger this workflow on pushes to your 'main' branch
+      - master
 
 jobs:
   build:
-    runs-on: ubuntu-latest # Use a standard Ubuntu runner
+    runs-on: ubuntu-latest
+
+    # Add this permissions block:
+    permissions:
+      contents: write # Allows the bot to write to the repository (for _site)
+      pages: write    # Grants permission to manage GitHub Pages deployments
+      id-token: write # Required for OpenID Connect (OIDC) authentication, good practice
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4 # Action to check out your code
+        uses: actions/checkout@v4
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2' # Important: Use a Ruby version that matches your local setup (e.g., 3.2 or 3.3).
-                              # You are using 3.2.8 locally, so '3.2' is a good match.
-          bundler-cache: true # Installs dependencies with Bundler (from your Gemfile.lock)
+          ruby-version: '3.2'
+          bundler-cache: true
 
       - name: Build Jekyll site
         run: |
-          bundle exec jekyll build --trace # Build the site with your gems. --trace helps with debugging.
+          bundle exec jekyll build --trace
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4 # Recommended action for deploying static sites
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site # The directory where Jekyll outputs the built site
-          # The 'publish_branch' must match the branch you configured for GitHub Pages to serve from.
-          # For username.github.io repos, it's usually 'main'.
-          publish_branch: main # <--- CONFIRM THIS MATCHES YOUR GITHUB PAGES SETTINGS
-          force_orphan: true # Recommended for clean deployments, overwrites history of publish_branch
+          publish_dir: ./_site
+          publish_branch: main
+          force_orphan: true
