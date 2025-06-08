@@ -5,7 +5,7 @@ name: Build and Deploy Jekyll Site
 on:
   push:
     branches:
-      - main # Trigger this workflow on pushes to your 'main' branch
+      - master # Trigger this workflow on pushes to your 'main' branch
 
 jobs:
   build:
