@@ -1,7 +1,7 @@
 ---
 layout: archive
-title: "CV"
-permalink: /cv/
+title: "Bio"
+permalink: /bio/
 author_profile: true
 redirect_from:
   - /resume
@@ -11,28 +11,22 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* Ph.D in Aerospace Engineering Sciences (Autonomous Systems), University of Colorado Boulder, 2025 (expected)
+* M.S. in Aerospace Engineering Sciences (Autonomous Systems), University of Colorado Boulder, 2023
+* B.S. in Mechanical Engineering, National University of Singapore, 2019
 
 Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* 2024-2025: Visiting Student Researcher
+  * NASA Jet Propulsion Laboratory
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* 2020-2025: Graduate Research Assistant
+  * University of Colorado Boulder
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* 2019-2020: Research Engineer
+  * Future Urban Mobility, Singapore-MIT Alliance for Research and Technology
   
-Skills
+<!-- Skills
 ======
 * Skill 1
 * Skill 2
@@ -61,4 +55,4 @@ Teaching
   
 Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+* Currently signed in to 43 different slack teams -->

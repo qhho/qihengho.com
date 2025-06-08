@@ -19,5 +19,5 @@ gem 'jekyll-avatar'
 gem 'jekyll-relative-links'
 gem 'jekyll-seo-tag'
 gem 'jekyll-gist'
-gem 'jekyll-paginate-v2' #
+gem 'jekyll-paginate'
 # gem 'connection_pool', '2.5.0' # Only if you explicitly need it for another plugin, otherwise remove

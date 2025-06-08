@@ -11,26 +11,24 @@ author_profile: true
 
 {% include base_path %}
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
+<!-- <p>Below is a list of my publications, organized by type. For a complete list in BibTeX format, please see the <a href="{{ site.baseurl }}/assets/bib/references.bib" download>downloadable BibTeX file</a>.</p> -->
 
+<hr>
 
+<h2 id="journal-articles">Journal Articles</h2>
+{% bibliography --query @article --group_by none --max_authors 99 %}
 
+<hr>
+
+<h2 id="peer-reviewed-conference-publications">Peer-Reviewed Conference Publications</h2>
+{% bibliography --query @inproceedings --group_by none --max_authors 99 %}
+
+<hr>
+
+<h2 id="lightly-refereed-manuscripts">Lightly Refereed Manuscripts (Workshops, Symposia)</h2>
+{% bibliography --query @misc and (@*[note ~= "Workshop"] or @*[note ~= "Symposium"] or @*[note ~= "Oral Presentation"]) --group_by none --max_authors 99 %}
+
+<!-- <hr>
+
+<h2 id="manuscripts-in-preparation">Manuscripts in Preparation / Under Review</h2>
+{% bibliography --query @misc and (@*[note ~= "In Preparation"] or @*[note ~= "Under Review"]) --group_by none --max_authors 99 %} -->
